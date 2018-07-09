@@ -1,0 +1,14 @@
+4. Deep Equal
+
+function deepEqual (a,b){
+  if (typeof a == "object" && a != null && typeof b == "object" && b != null){
+    let arr1 = Object.keys(a);
+    let arr2 = Object.keys(b);
+    if (arr1.length != arr2.length) {return false;}
+    for (let name in arr1){
+      if (arr1.name != arr2.name){return false}
+    }
+    return true
+  }
+  else return a === b;
+}
