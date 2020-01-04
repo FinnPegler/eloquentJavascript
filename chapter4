@@ -43,7 +43,17 @@ newArr.unshift(arr[item]);
 return newArr
 }
 
-2.2 (To do)
+2.2 
+let reverseArray = function (arr) {
+let newArr = arr;
+for (let i = 0;i < Math.floor(arr.length/2); i++){
+temp = arr[arr.length-i-1]
+newArr[arr.length-i-1] = arr[i];
+newArr[i] = temp;
+}
+return newArr
+}
+
 3. 
 4. Deep Equal
 
