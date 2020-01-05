@@ -32,7 +32,6 @@ let range = (start, end, step = start <= end ? 1 : -1) => {
   }
   return arr;
 };
-range(5, 2);
 
 2.1 
 let reverseArray = function (arr) {
@@ -55,6 +54,13 @@ return newArr
 }
 
 3. 
+let arrayToList = (arr) => {
+    let list = null;
+    for (let i = arr.length-1; i >= 0 ; i--){
+    list = {value: arr[i], rest: list}
+    }
+  return list;
+}
 4. Deep Equal
 
 function deepEqual (a,b){
