@@ -70,6 +70,25 @@ function listToArray(list) {
     return array;
 }
 
+function prepend(val, list){
+  return {value:val, rest: list};
+}
+
+//non recursive solution
+function nth(list, val){
+  let count = 0;
+  for (let i = list;i; i = i.rest){
+    if (count == val){console.log(i.value); return}
+    else count++;
+  }
+}
+
+//recursive solution
+function nth(list, val){
+    if (!list){return undefined}
+    else if (val == 0) {return list.value}
+    else return nth(list.rest, val-1)
+      }
 
 4. Deep Equal
 
