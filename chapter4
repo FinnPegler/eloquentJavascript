@@ -61,6 +61,16 @@ let arrayToList = (arr) => {
     }
   return list;
 }
+
+function listToArray(list) {
+  var array = [];
+    for (let i = list; i; i = i.rest){
+      array.push(i.value);
+    }
+    return array;
+}
+
+
 4. Deep Equal
 
 function deepEqual (a,b){
