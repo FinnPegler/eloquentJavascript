@@ -1,4 +1,4 @@
-1.1
+//1.1
 
 let range = (start, end) => {
 let arr = [];
@@ -7,8 +7,8 @@ for (let i = start; i <= end; i++) {
 }
 return arr;
 }
-1.2
 
+//1.2
 let sum = (start, end) => {
 let count =0;
 for (let i = start; i <= end; i++) {
@@ -17,7 +17,7 @@ for (let i = start; i <= end; i++) {
 return count;
 }
 
-1.3
+//1.3
 let range = (start, end, step = start <= end ? 1 : -1) => {
   let arr = [];
   if (start < end) {
@@ -33,7 +33,7 @@ let range = (start, end, step = start <= end ? 1 : -1) => {
   return arr;
 };
 
-2.1 
+//2.1 
 let reverseArray = function (arr) {
 let newArr = [];
 for (let item in arr){
@@ -42,7 +42,7 @@ newArr.unshift(arr[item]);
 return newArr
 }
 
-2.2 
+//2.2 
 let reverseArray = function (arr) {
 let newArr = arr;
 for (let i = 0;i < Math.floor(arr.length/2); i++){
@@ -90,17 +90,15 @@ function nth(list, val){
     else return nth(list.rest, val-1)
       }
 
-4. Deep Equal
+//4. Deep Equal
 
 function deepEqual (a,b){
   if (typeof a == "object" && a != null && typeof b == "object" && b != null){
-    let arr1 = Object.keys(a);
-    let arr2 = Object.keys(b);
-    if (arr1.length != arr2.length) {return false;}
-    for (let name in arr1){
-      if (arr1.name != arr2.name){return false}
-    }
-    return true
+      if (Object.keys(a).length != Object.keys(b).length) {console.log("1"); return false} 
+      else for (let i = 0; i < Object.keys(a).length;i++) {
+          if (Object.keys(a)[i] != Object.keys(b)[i]) {console.log("2"); return false}
+          else return deepEqual(a[Object.keys(a)[i]], b[Object.keys(b)[i]])
+      } 
+    } 
+  else {return a === b}  
   }
-  else return a === b;
-}
